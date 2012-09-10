@@ -1,0 +1,181 @@
+<html>
+<head>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="scripts/jquery.address-1.5.min.js?state=/"></script>
+
+<script>
+
+
+
+</script>
+
+
+<link href='http://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Economica' rel='stylesheet' type='text/css'>
+<link href='style.css' rel='stylesheet' type='text/css'>
+
+</head>
+<body>
+
+<div id="main_wrap">
+
+<div id="header">
+
+
+
+	<div id="logo">
+	<img src="images/logo.png">
+	</div>
+	
+	<div id="top_n"><h2>"<span style="color:#99dff8">BlueCoral</span> had my website up and running in a matter of days, I am absolutely riveted with the outcome and have already received plenty of compliments from customers and friends!" - Nathalie Charles</h2> 
+	</div>
+	
+	
+</div>
+
+
+	
+	
+	<div id="right_page">
+	
+	
+	
+	<div id="left_menu_bar">
+	<ul>
+	
+	<li class="lmit_1"><a href="#home">Home</a></li>
+	<li class="lmit_2"><a href="#about-us">About us</a></li>
+	<li class="lmit_3"><a href="#who-we-are">Who we are</a></li>
+	<li class="lmit_4"><a href="#whats-new">Whats new</a></li>
+	<li class="lmit_5"><a href="#deeplink">Deep link</a></li>	
+	
+	</ul>
+	</div>
+	
+	<div id="lmit_back"><div id="back_arrow"></div></div>
+	
+	<div id="php_load"></div>
+	
+	
+	</div>
+
+
+
+
+
+
+
+
+</div>
+
+<script>
+
+
+
+
+
+
+
+
+
+	
+	
+
+	
+	
+	//$('#left_menu_bar ul li').click(function () {
+	//var tag = $(this).children().attr('href').replace('#','');
+	//var current_address = $.address.hash();
+	
+
+	//});
+	
+
+	
+
+	
+	
+	
+//$(document).ready(function() {
+
+		
+
+		if (($.address.hash() == '')) {$.address.hash('home');}
+		
+		$('#lmit_back').click(function() {
+				
+				$.address.hash('home');
+		
+		});
+	
+	
+		$.address.change( function() {	
+			
+			
+			if (!($.address.hash() == 'home')) 
+			{
+			
+			
+			
+			var exception = '.' + $('[href="#' + $.address.hash() + '"]').parent().attr('class');
+			
+				$('#left_menu_bar li:not(' + exception + ')').hide(300,function() {
+				
+					$(exception).show( function() {
+					
+						$('#left_menu_bar').animate({ width:'100%'},400, function() { 
+					
+							$('#lmit_back').show(400);
+					
+					
+						});
+					
+					});
+				
+				});
+
+			
+						
+			}
+			else
+			{
+			
+			
+				
+			
+				$('#left_menu_bar').animate({ width:'251px'}, function() { 
+			
+					$('#left_menu_bar li').show( function() {
+					
+						$('#lmit_back').hide(function() { return });
+										
+					});
+			
+				});
+			
+				$('#left_menu_bar').css('width','251px');
+			
+			
+			
+			}
+			
+			
+		});	
+	
+//});
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>
